@@ -25,7 +25,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-(cedq@@ah*fzkjz4t@fh5w^zu7v*wporz@3=%e2!w+)sdrr_y1')
+SECRET_KEY = os.getenv(
+    'SECRET_KEY',
+    'django-insecure-(cedq@@ah*fzkjz4t@fh5w^zu7v*wporz@3=%e2!w+)sdrr_y1'
+)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -130,5 +133,3 @@ DATA_UPLOAD_MAX_MEMORY_SIZE = 10485760  # 10MB
 LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/login/'
-
-

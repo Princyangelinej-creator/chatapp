@@ -1,0 +1,36 @@
+[MASTER]
+# Load Django plugin
+load-plugins=pylint_django
+
+# Ignore directories
+ignore=venv,migrations,__pycache__
+
+[MESSAGES CONTROL]
+# Disable some warnings that are intentional in this project
+disable=
+    missing-module-docstring,
+    missing-class-docstring,
+    too-few-public-methods,
+    imported-auth-user,
+    django-not-configured
+
+[FORMAT]
+# Maximum number of characters on a single line
+max-line-length=120
+
+[DESIGN]
+# Maximum number of branches for function / method body
+max-branches=20
+
+# Maximum number of locals for function / method body
+max-locals=20
+
+# Maximum number of return / yield for function / method body
+max-returns=10
+
+# Maximum number of statements in function / method body
+max-statements=60
+
+[IMPORTS]
+# Allow imports inside try-except blocks (for optional dependencies)
+allow-any-import-level=yes

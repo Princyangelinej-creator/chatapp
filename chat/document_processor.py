@@ -156,7 +156,7 @@ def extract_from_docx(file_input):
     try:
         from docx import Document
         from io import BytesIO
-        
+
         # Handle file input (could be file object or path)
         if hasattr(file_input, 'read'):
             file_input.seek(0)
@@ -165,15 +165,15 @@ def extract_from_docx(file_input):
             doc = Document(BytesIO(file_content))
         else:
             doc = Document(file_input)
-        
+
         text_parts = []
-        
+
         # Extract text from paragraphs
         for paragraph in doc.paragraphs:
             para_text = paragraph.text.strip()
             if para_text:
                 text_parts.append(para_text)
-        
+
         # Extract text from tables
         for table in doc.tables:
             for row in table.rows:
@@ -184,7 +184,7 @@ def extract_from_docx(file_input):
                         row_text.append(cell_text)
                 if row_text:
                     text_parts.append(" | ".join(row_text))
-        
+
         text = "\n".join(text_parts)
         return text.strip()
     except Exception as e:
@@ -253,4 +253,3 @@ def get_file_type(file_path):
     """Get MIME type of file"""
     mime_type, _ = mimetypes.guess_type(file_path)
     return mime_type or 'application/octet-stream'
-

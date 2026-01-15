@@ -243,7 +243,8 @@ def chat(request):  # pylint: disable=too-many-locals,too-many-branches,too-many
                 "role": "user",
                 "content": (
                     f"You have access to the following document(s) that the user has uploaded. "
-                    f"Read the document content carefully and use it to answer the user's questions.\n\n"
+                    f"Read the document content carefully and use it to answer the "
+                    f"user's questions.\n\n"
                     f"{all_docs_text}\n\n"
                     f"Now, based on the document content above, answer the user's question:"
                 )
@@ -836,7 +837,8 @@ def ask_document(request):  # pylint: disable=too-many-locals
 
         prompt = (
             f"You are a helpful assistant with access to a document. "
-            f"Please read the following document content carefully and answer the user's question based on it.\n\n"
+            f"Please read the following document content carefully and answer the "
+            f"user's question based on it.\n\n"
             f"Document filename: {document.filename}\n\n"
             f"Document content:\n{doc_text}\n\n"
             f"User's question: {question}\n\n"
@@ -1007,6 +1009,3 @@ def delete_document(request, document_id):
         return JsonResponse({'status': 'success'})
     except Exception as e:
         return JsonResponse({'error': str(e)}, status=500)
-
-
-

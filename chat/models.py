@@ -106,4 +106,3 @@ class Document(models.Model):
     def __str__(self):
         # pylint: disable=no-member
         return f"{self.user.username} - {self.filename}"
-
