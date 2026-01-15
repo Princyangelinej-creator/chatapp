@@ -95,7 +95,7 @@ def extract_from_pdf(file_input):
 
     # Method 1: Try PyMuPDF (fitz) FIRST - most robust, handles most PDF types
     try:
-        import fitz  # PyMuPDF
+        import fitz  # PyMuPDF # pylint: disable=import-outside-toplevel
         text = ""
         doc = fitz.open(stream=file_content, filetype="pdf")
         for page in doc:
